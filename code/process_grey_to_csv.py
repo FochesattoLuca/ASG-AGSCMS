@@ -32,8 +32,8 @@ def process_grey_file(grey_file, output_csv):
                 writer.writerow([x, y, f"{temp_k:.2f}", f"{temp_c:.2f}"])
 
 def main():
-    # Find all .grey files in current directory
-    grey_files = glob.glob("lepton_*.grey")
+    # Find all .grey files in current directory and subdirectories
+    grey_files = glob.glob("**/*.grey", recursive=True)
     if not grey_files:
         print("No .grey files found in current directory")
         return
